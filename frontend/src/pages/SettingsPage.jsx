@@ -1,0 +1,45 @@
+import { Settings as SettingsIcon, LogOut } from "lucide-react";
+import { motion } from "framer-motion";
+import { useAuth } from "@/context/AuthContext";
+import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
+import ThemeSwitcher from "@/components/profile/ThemeSwitcher";
+
+export default function SettingsPage() {
+  const { logout } = useAuth();
+
+  return (
+    <div className="flex-1 overflow-y-auto p-6 lg:p-9 max-w-3xl">
+      <h1 className="text-3xl font-bold font-display mb-2 flex items-center gap-3" style={{ color: "var(--text-primary)" }}>
+        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "var(--accent-wash)" }}>
+          <SettingsIcon size={18} style={{ color: "var(--accent)" }} />
+        </div>
+        Settings
+      </h1>
+      <p className="text-sm mb-8" style={{ color: "var(--text-secondary)" }}>
+        Customize how Orbit looks and feels.
+      </p>
+
+      <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+        <Card className="p-7 mb-6">
+          <h2 className="font-bold text-lg font-display mb-1.5" style={{ color: "var(--text-primary)" }}>
+            Appearance
+          </h2>
+          <p className="text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+            Pick a theme. Your choice is saved to your account and synced across devices.
+          </p>
+          <ThemeSwitcher />
+        </Card>
+      </motion.div>
+
+      <Card className="p-7">
+        <h2 className="font-bold text-lg font-display mb-4" style={{ color: "var(--text-primary)" }}>
+          Account
+        </h2>
+        <Button variant="secondary" onClick={logout} className="w-full justify-start">
+          <LogOut size={16} /> Log out
+        </Button>
+      </Card>
+    </div>
+  );
+}
