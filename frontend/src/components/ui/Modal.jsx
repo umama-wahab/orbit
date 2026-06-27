@@ -6,7 +6,7 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -30,10 +30,10 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
           >
             {title && (
               <div
-                className="flex items-center justify-between px-6 py-5 border-b"
+                className="flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 border-b"
                 style={{ borderColor: "var(--border-soft)" }}
               >
-                <h3 className="font-bold text-xl font-display" style={{ color: "var(--text-primary)" }}>
+                <h3 className="font-bold text-lg sm:text-xl font-display truncate pr-2" style={{ color: "var(--text-primary)" }}>
                   {title}
                 </h3>
                 <motion.button
@@ -47,7 +47,7 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = "ma
                 </motion.button>
               </div>
             )}
-            <div className="p-6">{children}</div>
+            <div className="p-4 sm:p-6">{children}</div>
           </motion.div>
         </motion.div>
       )}

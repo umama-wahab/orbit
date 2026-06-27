@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://orbit-production-ff63.up.railway.app/api",
+  baseURL: "/api",
   withCredentials: true,
 });
 

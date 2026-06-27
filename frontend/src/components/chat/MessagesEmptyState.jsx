@@ -37,7 +37,7 @@ export default function MessagesEmptyState({ existingContactIds, onStartChat, on
         initial={{ scale: 0.85, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 w-24 h-24 rounded-[28px] flex items-center justify-center mb-5 elevated"
+        className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 rounded-[24px] sm:rounded-[28px] flex items-center justify-center mb-5 elevated"
         style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-soft))" }}
       >
         <MessageCircle size={40} color="var(--accent-contrast)" strokeWidth={1.8} />

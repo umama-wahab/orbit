@@ -6,6 +6,7 @@ const SIZES = {
   md: "w-11 h-11 text-sm",
   lg: "w-16 h-16 text-lg",
   xl: "w-24 h-24 text-2xl",
+  "xl-responsive": "w-16 h-16 text-lg sm:w-24 sm:h-24 sm:text-2xl",
 };
 
 const RING_SIZES = {
@@ -14,6 +15,7 @@ const RING_SIZES = {
   md: "p-[2px]",
   lg: "p-[2.5px]",
   xl: "p-[3px]",
+  "xl-responsive": "p-[2.5px] sm:p-[3px]",
 };
 
 // A curated set of premium gradient pairs (not random hex, hand-picked so

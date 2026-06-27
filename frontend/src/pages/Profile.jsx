@@ -35,25 +35,25 @@ export default function Profile() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto p-6 lg:p-9 max-w-2xl">
-      <h1 className="text-3xl font-bold font-display mb-7" style={{ color: "var(--text-primary)" }}>
+    <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-9 max-w-2xl">
+      <h1 className="text-2xl sm:text-3xl font-bold font-display mb-7" style={{ color: "var(--text-primary)" }}>
         Your Profile
       </h1>
 
-      <Card className="p-8 space-y-7">
-        <div className="flex items-center gap-6">
-          <div className="relative">
-            <Avatar username={username} avatarColor={avatarColor} size="xl" ring />
+      <Card className="p-5 sm:p-8 space-y-6 sm:space-y-7">
+        <div className="flex items-center gap-4 sm:gap-6">
+          <div className="relative shrink-0">
+            <Avatar username={username} avatarColor={avatarColor} size="xl-responsive" ring />
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full flex items-center justify-center border-3 elevated-sm"
+              className="absolute -bottom-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center border-2 sm:border-3 elevated-sm"
               style={{ background: "var(--accent)", borderColor: "var(--surface)" }}
             >
-              <Camera size={14} color="var(--accent-contrast)" />
+              <Camera size={13} color="var(--accent-contrast)" />
             </motion.div>
           </div>
-          <div>
-            <p className="font-bold text-lg font-display" style={{ color: "var(--text-primary)" }}>
+          <div className="min-w-0">
+            <p className="font-bold text-base sm:text-lg font-display truncate" style={{ color: "var(--text-primary)" }}>
               {username}
             </p>
             <p className="text-xs font-medium mt-0.5" style={{ color: "var(--text-muted)" }}>
@@ -67,14 +67,14 @@ export default function Profile() {
           <label className="block text-[13px] font-semibold mb-3" style={{ color: "var(--text-secondary)" }}>
             Avatar color
           </label>
-          <div className="flex gap-2.5">
+          <div className="flex gap-2.5 flex-wrap">
             {AVATAR_COLORS.map((c) => (
               <motion.button
                 key={c}
                 onClick={() => setAvatarColor(c)}
                 whileHover={{ scale: 1.15 }}
                 animate={{ scale: avatarColor === c ? 1.15 : 1 }}
-                className="w-9 h-9 rounded-full relative"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-full relative shrink-0"
                 style={{ background: c }}
               >
                 {avatarColor === c && (

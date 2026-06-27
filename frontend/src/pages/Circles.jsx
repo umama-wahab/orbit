@@ -36,24 +36,27 @@ export default function Circles() {
   };
 
   return (
-    <div className="flex-1 overflow-y-auto p-6 lg:p-9" style={{ background: "radial-gradient(circle at 50% 0%, rgba(141,71,245,0.04), transparent 60%)" }}>
-      <div className="flex items-center justify-between mb-7 flex-wrap gap-3">
-        <div>
+    <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-9" style={{ background: "radial-gradient(circle at 50% 0%, rgba(141,71,245,0.04), transparent 60%)" }}>
+      <div className="flex items-start sm:items-center justify-between mb-6 sm:mb-7 flex-wrap gap-3">
+        <div className="min-w-0">
           <div className="flex items-center gap-2 mb-1.5">
-            <Sparkles size={20} style={{ color: "var(--purple, #8D47F5)" }} />
-            <h1 className="text-3xl font-bold font-display" style={{ color: "var(--text-primary)" }}>
+            <Sparkles size={18} className="sm:hidden" style={{ color: "var(--purple, #8D47F5)" }} />
+            <Sparkles size={20} className="hidden sm:block" style={{ color: "var(--purple, #8D47F5)" }} />
+            <h1 className="text-xl sm:text-3xl font-bold font-display" style={{ color: "var(--text-primary)" }}>
               Anonymous Circles
             </h1>
           </div>
-          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+          <p className="text-xs sm:text-sm" style={{ color: "var(--text-secondary)" }}>
             Chat freely. No real names, no profile photos — just aliases.
           </p>
         </div>
-        <div className="flex gap-2.5">
-          <Button variant="secondary" onClick={() => setShowJoin(true)}>
+        <div className="flex gap-2 sm:gap-2.5 w-full sm:w-auto">
+          <Button variant="secondary" size="sm" className="flex-1 sm:flex-initial sm:text-sm" onClick={() => setShowJoin(true)}>
             Join with code
           </Button>
-          <Button onClick={() => setShowCreate(true)}>+ Create circle</Button>
+          <Button size="sm" className="flex-1 sm:flex-initial sm:text-sm" onClick={() => setShowCreate(true)}>
+            + Create
+          </Button>
         </div>
       </div>
 

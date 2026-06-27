@@ -37,23 +37,23 @@ export default function FeaturedCircleCard({ circle, onJoin }) {
         }}
       />
 
-      <div className="relative z-10 p-7 lg:p-8 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
+      <div className="relative z-10 p-5 sm:p-7 lg:p-8 flex flex-col lg:flex-row lg:items-center gap-5 sm:gap-6 lg:gap-10">
         <div className="flex-1 min-w-0">
           <span
-            className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 rounded-full mb-4"
+            className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1.5 rounded-full mb-3 sm:mb-4"
             style={{ background: "rgba(229,190,77,0.18)", color: "#F0D98A" }}
           >
             <Flame size={11} /> Featured Circle
           </span>
-          <h3 className="text-2xl lg:text-3xl font-bold font-display mb-2.5" style={{ color: "#F5F5F7" }}>
+          <h3 className="text-lg sm:text-2xl lg:text-3xl font-bold font-display mb-2 sm:mb-2.5 break-words" style={{ color: "#F5F5F7" }}>
             {circle.name}
           </h3>
           {circle.description && (
-            <p className="text-sm leading-relaxed mb-5 max-w-md" style={{ color: "#9A9AA4" }}>
+            <p className="text-sm leading-relaxed mb-4 sm:mb-5 max-w-md" style={{ color: "#9A9AA4" }}>
               {circle.description}
             </p>
           )}
-          <div className="flex items-center gap-5 flex-wrap">
+          <div className="flex items-center gap-4 sm:gap-5 flex-wrap">
             <span className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: "#C8C8D0" }}>
               <Users size={13} /> {circle.memberCount} anonymous members
             </span>
@@ -66,10 +66,11 @@ export default function FeaturedCircleCard({ circle, onJoin }) {
 
         <div className="flex flex-row lg:flex-col items-center gap-4 shrink-0">
           <div
-            className="w-20 h-20 rounded-3xl flex items-center justify-center elevated shrink-0"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl flex items-center justify-center elevated shrink-0"
             style={{ background: "linear-gradient(135deg, #8D47F5, #D84F83)" }}
           >
-            <EyeOff size={28} color="#fff" />
+            <EyeOff size={24} className="sm:hidden" color="#fff" />
+            <EyeOff size={28} className="hidden sm:block" color="#fff" />
           </div>
           <Button onClick={(e) => { e.stopPropagation(); onJoin(circle); }} size="md" className="shrink-0">
             Join circle <ArrowRight size={14} />

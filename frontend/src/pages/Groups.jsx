@@ -47,13 +47,13 @@ export default function Groups() {
 
   if (!conversationId) {
     return (
-      <div className="flex-1 overflow-y-auto p-6 lg:p-9">
-        <div className="flex items-center justify-between mb-7 flex-wrap gap-3">
-          <div>
-            <h1 className="text-3xl font-bold font-display" style={{ color: "var(--text-primary)" }}>
+      <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-9">
+        <div className="flex items-center justify-between mb-6 sm:mb-7 flex-wrap gap-3">
+          <div className="min-w-0">
+            <h1 className="text-xl sm:text-3xl font-bold font-display" style={{ color: "var(--text-primary)" }}>
               Communities
             </h1>
-            <p className="text-sm mt-1.5" style={{ color: "var(--text-secondary)" }}>
+            <p className="text-xs sm:text-sm mt-1 sm:mt-1.5" style={{ color: "var(--text-secondary)" }}>
               Your group chats, all in one place.
             </p>
           </div>
@@ -61,10 +61,10 @@ export default function Groups() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => setShowNewGroup(true)}
-            className="flex items-center gap-2 text-sm font-bold px-5 py-3 rounded-full elevated"
+            className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 sm:py-3 rounded-full elevated shrink-0"
             style={{ background: "linear-gradient(135deg, var(--accent), var(--accent-soft))", color: "var(--accent-contrast)" }}
           >
-            <Plus size={16} /> New group
+            <Plus size={15} className="sm:hidden" /> <Plus size={16} className="hidden sm:block" /> New group
           </motion.button>
         </div>
 
@@ -191,31 +191,31 @@ export default function Groups() {
         </div>
       ) : (
         <>
-          <div className="px-6 lg:px-8 py-5 flex items-center justify-between shrink-0 border-b" style={{ borderColor: "var(--border-soft)" }}>
-            <div className="flex items-center gap-3.5">
-              <button onClick={() => navigate("/app/groups")} style={{ color: "var(--text-secondary)" }}>
+          <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-3 shrink-0 border-b" style={{ borderColor: "var(--border-soft)" }}>
+            <div className="flex items-center gap-3 sm:gap-3.5 min-w-0 flex-1">
+              <button onClick={() => navigate("/app/groups")} className="shrink-0" style={{ color: "var(--text-secondary)" }}>
                 <ArrowLeft size={18} />
               </button>
               <div
-                className="w-11 h-11 rounded-2xl flex items-center justify-center text-sm font-bold text-white elevated-sm"
+                className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center text-sm font-bold text-white elevated-sm shrink-0"
                 style={{ background: getCoverGradient(activeGroup._id + "icon") }}
               >
                 {activeGroup.icon || activeGroup.name?.slice(0, 2).toUpperCase()}
               </div>
-              <div>
-                <p className="font-bold text-[15px]" style={{ color: "var(--text-primary)" }}>
+              <div className="min-w-0">
+                <p className="font-bold text-[15px] truncate" style={{ color: "var(--text-primary)" }}>
                   {activeGroup.name}
                 </p>
-                <p className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>
+                <p className="text-xs font-medium truncate" style={{ color: "var(--text-muted)" }}>
                   {activeGroup.participants.length} members
                 </p>
               </div>
             </div>
-            <div className="flex items-center gap-1">
-              <button onClick={() => setShowPoll(true)} className="p-2.5 rounded-full" style={{ color: "var(--text-secondary)" }}>
+            <div className="flex items-center gap-1 shrink-0">
+              <button onClick={() => setShowPoll(true)} className="p-2 sm:p-2.5 rounded-full" style={{ color: "var(--text-secondary)" }}>
                 <BarChart3 size={18} />
               </button>
-              <button onClick={() => setShowInfo(true)} className="p-2.5 rounded-full" style={{ color: "var(--text-secondary)" }}>
+              <button onClick={() => setShowInfo(true)} className="p-2 sm:p-2.5 rounded-full" style={{ color: "var(--text-secondary)" }}>
                 <Info size={18} />
               </button>
             </div>

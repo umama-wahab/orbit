@@ -67,7 +67,7 @@ export default function Messages() {
         className={`w-full md:w-[340px] flex flex-col shrink-0 border-r ${conversationId ? "hidden md:flex" : "flex"}`}
         style={{ borderColor: "var(--border-soft)" }}
       >
-        <div className="px-6 pt-7 pb-5 shrink-0">
+        <div className="px-4 sm:px-6 pt-5 sm:pt-7 pb-4 sm:pb-5 shrink-0">
           <div className="flex items-center justify-between mb-5">
             <h1 className="text-2xl font-bold font-display" style={{ color: "var(--text-primary)" }}>
               Messages
@@ -123,9 +123,9 @@ export default function Messages() {
           />
         ) : (
           <>
-            <div className="px-6 lg:px-8 py-5 flex items-center justify-between shrink-0 border-b" style={{ borderColor: "var(--border-soft)" }}>
-              <div className="flex items-center gap-3.5">
-                <button onClick={() => navigate("/app/messages")} className="md:hidden mr-1" style={{ color: "var(--text-secondary)" }}>
+            <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-3 shrink-0 border-b" style={{ borderColor: "var(--border-soft)" }}>
+              <div className="flex items-center gap-3 sm:gap-3.5 min-w-0 flex-1">
+                <button onClick={() => navigate("/app/messages")} className="md:hidden mr-0.5 shrink-0" style={{ color: "var(--text-secondary)" }}>
                   <ArrowLeft size={18} />
                 </button>
                 <Avatar
@@ -134,19 +134,20 @@ export default function Messages() {
                   avatarColor={otherUser?.avatarColor}
                   isOnline={onlineUserIds.has(otherUser?._id)}
                   ring
+                  className="shrink-0"
                 />
-                <div>
-                  <p className="font-bold text-[15px]" style={{ color: "var(--text-primary)" }}>
+                <div className="min-w-0">
+                  <p className="font-bold text-[15px] truncate" style={{ color: "var(--text-primary)" }}>
                     {otherUser?.username}
                   </p>
-                  <p className="text-xs font-medium" style={{ color: onlineUserIds.has(otherUser?._id) ? "var(--online)" : "var(--text-muted)" }}>
+                  <p className="text-xs font-medium truncate" style={{ color: onlineUserIds.has(otherUser?._id) ? "var(--online)" : "var(--text-muted)" }}>
                     {formatLastSeen(otherUser?.lastSeen, onlineUserIds.has(otherUser?._id))}
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setShowSearch((v) => !v)}
-                className="p-2 rounded-full"
+                className="p-2 rounded-full shrink-0"
                 style={{ color: showSearch ? "var(--accent)" : "var(--text-secondary)", background: showSearch ? "var(--accent-wash)" : "transparent" }}
               >
                 <Search size={18} />

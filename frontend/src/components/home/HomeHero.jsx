@@ -52,15 +52,21 @@ export default function HomeHero({ user, activeConversations, circleCount, react
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="relative z-10 p-7 lg:p-10">
-        <div className="flex items-start gap-5 mb-7">
-          <Avatar username={user?.username} avatarUrl={user?.avatarUrl} avatarColor={user?.avatarColor} size="xl" ring />
-          <div className="pt-1">
+      <div className="relative z-10 p-5 sm:p-7 lg:p-10">
+        <div className="flex items-start gap-4 sm:gap-5 mb-6 sm:mb-7">
+          <Avatar
+            username={user?.username}
+            avatarUrl={user?.avatarUrl}
+            avatarColor={user?.avatarColor}
+            size="xl-responsive"
+            ring
+          />
+          <div className="pt-1 min-w-0">
             <motion.h1
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl lg:text-4xl font-bold font-display leading-tight"
+              className="text-xl sm:text-3xl lg:text-4xl font-bold font-display leading-tight break-words"
               style={{ color: "var(--accent-contrast)" }}
             >
               {getGreeting()}, {user?.username} 👋

@@ -37,7 +37,7 @@ export default function ChatSearchPanel({ conversationId, isOpen, onClose, onJum
           className="overflow-hidden border-b"
           style={{ borderColor: "var(--border-soft)" }}
         >
-          <div className="px-6 lg:px-8 py-3.5">
+          <div className="px-4 sm:px-6 lg:px-8 py-3.5">
             <div className="relative">
               <Search size={14} className="absolute left-4 top-1/2 -translate-y-1/2" style={{ color: "var(--text-muted)" }} />
               <input

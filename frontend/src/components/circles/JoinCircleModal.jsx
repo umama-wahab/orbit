@@ -44,7 +44,7 @@ export default function JoinCircleModal({ isOpen, onClose, onJoined }) {
           placeholder="ABX7-KP92"
           maxLength={9}
           whileFocus={{ scale: 1.02 }}
-          className="w-full text-center text-2xl font-bold tracking-[0.2em] font-display px-4 py-5 rounded-[var(--radius-lg)] border-2 outline-none"
+          className="w-full text-center text-xl sm:text-2xl font-bold tracking-[0.12em] sm:tracking-[0.2em] font-display px-3 sm:px-4 py-4 sm:py-5 rounded-[var(--radius-lg)] border-2 outline-none"
           style={{
             background: "var(--card)",
             borderColor: error ? "var(--notification)" : "transparent",

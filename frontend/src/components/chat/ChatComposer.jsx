@@ -37,7 +37,7 @@ export default function ChatComposer({ onSend, onTyping, placeholder = "Type a m
   };
 
   return (
-    <div className="px-5 lg:px-7 py-5 shrink-0">
+    <div className="px-3 sm:px-5 lg:px-7 py-3 sm:py-5 shrink-0">
       {pendingAttachment && (
         <motion.div
           initial={{ opacity: 0, y: 8 }}

@@ -9,10 +9,11 @@ export default function SettingsPage() {
   const { logout } = useAuth();
 
   return (
-    <div className="flex-1 overflow-y-auto p-6 lg:p-9 max-w-3xl">
-      <h1 className="text-3xl font-bold font-display mb-2 flex items-center gap-3" style={{ color: "var(--text-primary)" }}>
-        <div className="w-10 h-10 rounded-2xl flex items-center justify-center" style={{ background: "var(--accent-wash)" }}>
-          <SettingsIcon size={18} style={{ color: "var(--accent)" }} />
+    <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-9 max-w-3xl">
+      <h1 className="text-xl sm:text-3xl font-bold font-display mb-2 flex items-center gap-2 sm:gap-3" style={{ color: "var(--text-primary)" }}>
+        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-2xl flex items-center justify-center shrink-0" style={{ background: "var(--accent-wash)" }}>
+          <SettingsIcon size={16} className="sm:hidden" style={{ color: "var(--accent)" }} />
+          <SettingsIcon size={18} className="hidden sm:block" style={{ color: "var(--accent)" }} />
         </div>
         Settings
       </h1>

@@ -51,7 +51,7 @@ export default function MessageBubble({ id, message, isMine, showAvatar, isSeen,
         </div>
       )}
 
-      <div className={cn("flex flex-col max-w-[68%]", isMine ? "items-end" : "items-start")}>
+      <div className={cn("flex flex-col max-w-[82%] sm:max-w-[68%]", isMine ? "items-end" : "items-start")}>
         {!isMine && showAvatar && (
           <span className="text-[11px] font-bold mb-1 ml-1" style={{ color: "var(--text-muted)" }}>
             {message.sender?.username}

@@ -34,7 +34,7 @@ export default function CircleMessageBubble({ message, isMine, onReact }) {
       className={cn("flex gap-2.5 px-1 group", isMine ? "justify-end" : "justify-start")}
       onMouseLeave={() => setShowEmojiPicker(false)}
     >
-      <div className={cn("flex flex-col max-w-[68%]", isMine ? "items-end" : "items-start")}>
+      <div className={cn("flex flex-col max-w-[82%] sm:max-w-[68%]", isMine ? "items-end" : "items-start")}>
         {!isMine && (
           <span
             className="inline-flex items-center text-[11px] font-bold mb-1.5 ml-1 px-2 py-0.5 rounded-full"

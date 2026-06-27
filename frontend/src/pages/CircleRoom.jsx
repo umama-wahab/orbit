@@ -59,13 +59,13 @@ export default function CircleRoom() {
         style={{ background: circle.myAliasColor }}
       />
 
-      <div className="px-6 lg:px-8 py-5 flex items-center justify-between shrink-0 border-b relative z-10" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-        <div className="flex items-center gap-3.5 min-w-0">
-          <button onClick={() => navigate("/app/circles")} style={{ color: "#9A9AA4" }}>
+      <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between gap-3 shrink-0 border-b relative z-10" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
+        <div className="flex items-center gap-3 sm:gap-3.5 min-w-0 flex-1">
+          <button onClick={() => navigate("/app/circles")} className="shrink-0" style={{ color: "#9A9AA4" }}>
             <ArrowLeft size={18} />
           </button>
           <div
-            className="w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 elevated-sm"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl flex items-center justify-center shrink-0 elevated-sm"
             style={{ background: `linear-gradient(135deg, ${circle.myAliasColor}, #0E0E14)` }}
           >
             <EyeOff size={17} color="#fff" />
