@@ -54,7 +54,9 @@ const circleSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-circleSchema.index({ inviteCode: 1 });
+// Note: inviteCode already gets a unique index from `unique: true` above —
+// no need to declare it again here, that was creating the duplicate-index
+// warning Mongoose logs on startup.
 // Note: expiry is handled by an application-level job (src/jobs/circleExpiry.js)
 // rather than a MongoDB TTL index, so messages can be archived before the
 // circle is marked inactive instead of being silently deleted.
